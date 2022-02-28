@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}やーゆのブログ{% endblock %}
+{% block content %}
+    {% for post in posts %}
+    <div>
+        <h2>
+            <a href="{% url 'post_detail' post.id %}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <p>{{ post.created_at }}</p>
+        <p>{{ post.body }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
